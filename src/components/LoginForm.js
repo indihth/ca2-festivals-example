@@ -1,4 +1,4 @@
-import axios from 'axios'
+import axios from '../config/api'
 import { useState } from 'react'
 
 const LoginForm = ({ authenticated, onAuthenticated}) => {
@@ -18,7 +18,7 @@ const LoginForm = ({ authenticated, onAuthenticated}) => {
         console.log("clicked", form)
 
         // POST allows for 2nd param
-        axios.post('https://festivals-api.vercel.app/api/users/login', {
+        axios.post('/users/login', {
           email: form.email,        // data from form useState
           password: form.password
         })
